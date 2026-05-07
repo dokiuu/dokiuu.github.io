@@ -2233,7 +2233,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg";
+    img.src = "/imgs/profile.jpg";
     img.onerror = null;
   }
   function errorImgCover(img) {
@@ -2246,8 +2246,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.GLOBAL_CONFIG ={
     root: '/',
     debug: "env",
-    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1778142703819),
+    default: {"avatar":"/imgs/profile.jpg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1778145230060),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2579,7 +2579,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <!-- see: /layout/_partial/scripts/_ctrl.ejs -->
       <div id="half" class='cover-wrapper  dock' style="display: ;">
         
-  <div class='cover-bg lazyload placeholder' data-bg="https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg"></div>
+  <div class='cover-bg lazyload placeholder' data-bg="/imgs/background.jpg"></div>
 
 <div class='cover-body'>
   <div class='top'>
@@ -2594,10 +2594,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div class='list-h'>
         
           
-            <a href="/v4/getting-started/"
+            <a href="/docs/"
               
               
-              active-action="action-v4getting-started">
+              active-action="action-docs">
               <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f5c3.svg'><p>文档</p>
             </a>
           
@@ -2741,7 +2741,7 @@ Qu...
     
       
         <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/Logo-NavBar@3x.png' alt='avatar' />
+          <img no-lazy src='/imgs/profile.jpg' alt='avatar' />
         </a>
       
     
