@@ -84,42 +84,43 @@ pre,
 ::-webkit-scrollbar-thumb:hover {
   background: #777;
 }
-/* 友链卡片网格布局 */
+/* 友链卡片网格布局 - 简洁风格 */
 .friends-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 20px;
-  padding: 20px 0;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 24px;
+  padding: 24px 0;
+  margin-top: 24px;
 }
 .friend-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 15px;
-  background: rgba(45,45,45,0.9);
-  border-radius: 16px;
+  padding: 24px 16px;
+  background: rgba(50,50,50,0.6);
+  border-radius: 12px;
   text-decoration: none !important;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-light);
-  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
 }
 .friend-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-heavy);
-  border-color: rgba(61,217,182,0.3);
+  transform: translateY(-4px);
+  background: rgba(60,60,60,0.8);
+  border-color: rgba(61,217,182,0.2);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 .friend-avatar {
-  width: 70px;
-  height: 70px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 12px;
-  border: 3px solid rgba(61,217,182,0.5);
-  transition: border-color 0.3s ease;
+  margin-bottom: 14px;
+  border: 2px solid rgba(255,255,255,0.1);
+  transition: all 0.25s ease;
 }
 .friend-card:hover .friend-avatar {
   border-color: #3dd9b6;
+  transform: scale(1.05);
 }
 .friend-avatar img {
   width: 100%;
@@ -127,44 +128,36 @@ pre,
   object-fit: cover;
 }
 .friend-name {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   text-align: center;
+  letter-spacing: 0.5px;
 }
 .friend-tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 6px;
-  margin-bottom: 8px;
 }
 .friend-tags .tag {
   font-size: 11px;
   color: #3dd9b6;
-  background: rgba(61,217,182,0.15);
-  padding: 2px 8px;
-  border-radius: 10px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: rgba(61,217,182,0.12);
   transition: all 0.2s ease;
 }
 .friend-card:hover .friend-tags .tag {
-  background: rgba(61,217,182,0.25);
+  background: rgba(61,217,182,0.2);
 }
-.friend-desc {
+.friend-sig {
   font-size: 12px;
   color: #888;
   text-align: center;
-  line-height: 1.4;
-}
-.friend-signature {
-  font-size: 12px;
-  color: #aaa;
-  text-align: center;
-  line-height: 1.4;
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  line-height: 1.5;
+  margin-top: 10px;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -173,14 +166,18 @@ pre,
 /* 响应式调整 */
 @media (max-width: 768px) {
   .friends-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 16px;
+    padding: 16px 0;
   }
   .friend-card {
-    padding: 15px 10px;
+    padding: 20px 12px;
   }
   .friend-avatar {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
+  }
+  .friend-name {
+    font-size: 13px;
   }
 }
