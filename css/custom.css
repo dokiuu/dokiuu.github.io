@@ -1,0 +1,86 @@
+/* 增强阴影效果 */
+:root {
+  --shadow-light: 0 4px 20px rgba(0,0,0,0.4);
+  --shadow-medium: 0 8px 30px rgba(0,0,0,0.5);
+  --shadow-heavy: 0 12px 40px rgba(0,0,0,0.6);
+}
+/* 卡片阴影增强 */
+.l_main .post-wrapper,
+.l_side .widget,
+.article,
+.post-block,
+.timenode,
+.category-list a,
+.tagcloud a {
+  box-shadow: var(--shadow-medium) !important;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.l_main .post-wrapper:hover,
+.l_side .widget:hover,
+.article:hover,
+.post-block:hover {
+  box-shadow: var(--shadow-heavy) !important;
+  transform: translateY(-2px);
+}
+/* 侧边栏组件阴影 */
+.l_side .widget {
+  border-radius: 12px;
+  background: rgba(45,45,45,0.95);
+}
+/* 导航栏阴影增强 */
+#l_nav .navbar {
+  box-shadow: var(--shadow-medium) !important;
+}
+/* 文章列表项阴影 */
+.post-wrapper {
+  border-radius: 12px;
+  background: rgba(45,45,45,0.9) !important;
+}
+/* 时间线阴影 */
+.timenode {
+  background: rgba(45,45,45,0.9) !important;
+  border-left: 3px solid #3dd9b6;
+}
+/* 按钮悬停效果 */
+.btn,
+button {
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+}
+.btn:hover,
+button:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-1px);
+}
+/* 封面阴影 */
+#l_cover {
+  box-shadow: var(--shadow-heavy);
+}
+/* 移动端底部导航阴影 */
+#l_cap + div {
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+}
+/* 代码块阴影 */
+pre,
+.code-block {
+  box-shadow: var(--shadow-light);
+}
+/* 搜索框阴影 */
+.search-box {
+  box-shadow: var(--shadow-light);
+}
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
