@@ -4,14 +4,6 @@
   --shadow-medium: 0 8px 30px rgba(0,0,0,0.5);
   --shadow-heavy: 0 12px 40px rgba(0,0,0,0.6);
 }
-/* 封面标题字体白色 */
-#l_cover .cover-title,
-#l_cover .cover-subtitle,
-.l_cover_title,
-.l_cover_subtitle {
-  color: #fff !important;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-}
 /* 卡片阴影增强 */
 .l_main .post-wrapper,
 .l_side .widget,
