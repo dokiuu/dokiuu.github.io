@@ -41,6 +41,16 @@
   background: rgba(45,45,45,0.9) !important;
   border-left: 3px solid #3dd9b6;
 }
+/* 隐藏分类页面时间线的绿点（挡住时间） */
+div.timenode .meta:before,
+div.timenode .meta:after {
+  display: none !important;
+}
+/* 隐藏时间线竖线 */
+div.timenode:before,
+div.timenode:after {
+  display: none !important;
+}
 /* 按钮悬停效果 */
 .btn,
 button {
