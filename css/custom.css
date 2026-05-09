@@ -193,7 +193,7 @@ pre,
 }
 /* ==================== 顶部光效样式 ==================== */
 /* 封面标题光效 */
-#l_cover .cover-title {
+#l_cover .title {
   font-size: 3.5rem;
   font-weight: 700;
   background: linear-gradient(120deg, #3dd9b6 0%, #00d4ff 25%, #a855f7 50%, #00d4ff 75%, #3dd9b6 100%);
@@ -206,7 +206,7 @@ pre,
   filter: drop-shadow(0 0 20px rgba(61,217,182,0.5));
 }
 /* 封面副标题光效 */
-#l_cover .cover-subtitle {
+#l_cover .subtitle {
   font-size: 1.2rem;
   color: rgba(255,255,255,0.8);
   letter-spacing: 3px;
@@ -219,16 +219,16 @@ pre,
 }
 /* 光效动画 */
 /* 标题悬停增强效果 */
-#l_cover .cover-title:hover {
+#l_cover .title:hover {
   transform: scale(1.02);
   transition: all 0.3s ease;
 }
 /* 移动端适配 */
 @media (max-width: 768px) {
-  #l_cover .cover-title {
+  #l_cover .title {
     font-size: 2.2rem;
   }
-  #l_cover .cover-subtitle {
+  #l_cover .subtitle {
     font-size: 0.9rem;
     letter-spacing: 2px;
   }
