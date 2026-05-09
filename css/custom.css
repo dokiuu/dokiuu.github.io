@@ -95,10 +95,19 @@ pre,
   background: #777;
 }
 /* ==================== 简约友链列表样式 ==================== */
+#friends {
+  width: 100%;
+  max-width: 100%;
+}
 .friends-container {
   width: 100%;
   max-width: 100%;
-  padding: 20px 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.l_friends {
+  width: 100%;
+  max-width: 100%;
 }
 .friends-list {
   display: flex;
