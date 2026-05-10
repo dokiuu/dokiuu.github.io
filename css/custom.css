@@ -281,3 +281,92 @@ pre,
     letter-spacing: 2px;
   }
 }
+/* ==================== 顶部导航栏Logo样式 ==================== */
+.l_header .nav-main .title img {
+  height: 40px;
+  width: auto;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.l_header .nav-main .title img:hover {
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  transform: scale(1.02) rotate(1800deg);
+}
+/* ==================== 首页封面Logo样式 ==================== */
+.cover-wrapper .cover-body .logo {
+  max-height: 120px;
+  max-width: calc(100% - 4 * 16px);
+  border-radius: 20px;
+  object-fit: contain;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 50px rgba(255,255,255,0.35);
+  position: relative;
+}
+.cover-wrapper .cover-body .logo::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 23px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.6), transparent 40%, rgba(255,255,255,0.6));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  animation: whiteGlow 2s ease-in-out infinite;
+}
+.cover-wrapper .cover-body .logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 80px rgba(255,255,255,0.5), 0 0 110px rgba(255,255,255,0.4);
+  border-radius: 24px;
+}
+.cover-wrapper .cover-body .logo:hover::before {
+  opacity: 1;
+}
+/* 移动端Logo适配 */
+@media (max-width: 768px) {
+  .cover-wrapper .cover-body .logo {
+    max-height: 80px;
+    border-radius: 16px;
+  }
+  .l_header .nav-main .title img {
+    height: 32px;
+    border-radius: 50%;
+  }
+}
+@-moz-keyframes whiteGlow {
+  0%, 100% {
+    box-shadow: 0 0 40px rgba(255,255,255,0.4), 0 0 70px rgba(255,255,255,0.3);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(255,255,255,0.5), 0 0 90px rgba(255,255,255,0.35);
+  }
+}
+@-webkit-keyframes whiteGlow {
+  0%, 100% {
+    box-shadow: 0 0 40px rgba(255,255,255,0.4), 0 0 70px rgba(255,255,255,0.3);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(255,255,255,0.5), 0 0 90px rgba(255,255,255,0.35);
+  }
+}
+@-o-keyframes whiteGlow {
+  0%, 100% {
+    box-shadow: 0 0 40px rgba(255,255,255,0.4), 0 0 70px rgba(255,255,255,0.3);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(255,255,255,0.5), 0 0 90px rgba(255,255,255,0.35);
+  }
+}
+@keyframes whiteGlow {
+  0%, 100% {
+    box-shadow: 0 0 40px rgba(255,255,255,0.4), 0 0 70px rgba(255,255,255,0.3);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(255,255,255,0.5), 0 0 90px rgba(255,255,255,0.35);
+  }
+}
