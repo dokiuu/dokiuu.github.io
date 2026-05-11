@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>程序员圣经</title>
+      <link href="/2026/05/11/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%9C%A3%E7%BB%8F/"/>
+      <url>/2026/05/11/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%9C%A3%E7%BB%8F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="程序员圣经"><a href="#程序员圣经" class="headerlink" title="程序员圣经"></a>程序员圣经</h1><p>贪心骗样例，暴力出奇迹。 暴搜挂着机，打表出省一。<br>数学先打表，DP看运气。穷举TLE，打表UKE。<br>模拟MLE，贪心还CE。想要骗到分，就要有办法。<br>图论背模板，数论背公式。动规背方程，高精背代码。<br>如果都没背，干脆输样例！</p><p>模拟只会猜题意，贪心只能过样例。<br>数学上来先打表，规律一般是 D P。<br>组合数学碰运气，计算几何瞎暴力。<br>图论一顿套模板，数论只会 G C D。<br>七八个测试点，两三次CE前，旧时题解花样变，听取WA声一片……</p><h2 id="OJ评测结果"><a href="#OJ评测结果" class="headerlink" title="OJ评测结果"></a>OJ评测结果</h2><table><thead><tr><th>评测结果</th><th>缩写</th><th>说明</th></tr></thead><tbody><tr><td>Accepted</td><td>AC</td><td>通过 ✓</td></tr><tr><td>Presentation Error</td><td>PE</td><td>答案正确，格式出错</td></tr><tr><td>Time Limit Exceeded</td><td>TLE</td><td>时间超过限制</td></tr><tr><td>Memory Limit Exceeded</td><td>MLE</td><td>内存超过限制</td></tr><tr><td>Wrong Answer</td><td>WA</td><td>答案不对</td></tr><tr><td>Runtime Error</td><td>RE</td><td>程序运行时出错，一般是由于访问越界</td></tr><tr><td>Output Limit Exceeded</td><td>OLE</td><td>输出文件超</td></tr><tr><td>Compile Error</td><td>CE</td><td>编译出错</td></tr></tbody></table><hr><blockquote><p>“旧时题解花样变，听取WA声一片……”</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 竞赛 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 趣闻 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>YOLO 食用指南</title>
       <link href="/2026/05/09/YOLO%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/"/>
       <url>/2026/05/09/YOLO%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/</url>
