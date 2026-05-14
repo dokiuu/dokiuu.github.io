@@ -338,6 +338,167 @@ pre,
     border-radius: 50%;
   }
 }
+/* ==================== 文章封面图片样式（headimg） ==================== */
+/* 封面图片容器 */
+.post .headimg-div {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  margin: 0 0 16px 0;
+  border-radius: 0;
+}
+.post .headimg-div .headimg-a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.post .headimg-div .headimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 摘要显示 - 使用description字段 */
+.post .article-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-meta);
+}
+.post .article-desc p {
+  margin-bottom: 0;
+}
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .post .headimg-div {
+    height: 240px;
+    margin-bottom: 12px;
+  }
+}
+/* ==================== GitHub 热力图（原版风格 + 蓝色渐变） ==================== */
+.github-heatmap {
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  user-select: none;
+}
+/* 外层包裹：相对定位容器 */
+.gh-grid-wrapper {
+  position: relative;
+}
+/* 月份标签行 - 绝对定位容器 */
+.gh-months {
+  position: relative;
+  height: 18px;
+  margin-bottom: 6px;
+}
+/* 月份文字 - 绝对定位，left 由 JS 设置 */
+.gh-month-label {
+  position: absolute;
+  font-size: 0.8rem;
+  color: var(--color-meta);
+  white-space: nowrap;
+}
+/* 热力图主体 */
+.gh-body {
+  display: flex;
+  gap: 4px;
+}
+/* 左侧星期标签 Mon/Wed/Fri - 和右侧7行格子精确对齐 */
+.gh-day-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 让3个标签均匀分布在7行的空间中 */
+  padding: 0; /* 无额外间距 */
+  margin: 0;
+}
+.gh-day-labels span {
+  font-size: 0.72rem;
+  color: var(--color-meta);
+  width: 28px;
+  height: 10px; /* 和格子等高 */
+  line-height: 10px;
+  text-align: right;
+  padding-right: 4px;
+  box-sizing: border-box;
+  display: block;
+  flex-shrink: 0; /* 防止被压缩 */
+}
+/* 右侧热力图周列表 - 横向排列，每周是一列 */
+.gh-weeks {
+  display: flex;
+  gap: 3px;
+}
+/* 每周的7个格子垂直排列 */
+.gh-week {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+/* 热力图单元格 */
+.gh-cell {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  box-sizing: border-box;
+  display: inline-block;
+}
+.gh-cell:hover {
+  opacity: 0.6;
+  outline: 1px solid rgba(0,0,0,0.4);
+}
+/* 蓝色渐变等级 - GitHub 蓝色系 */
+.gh-level-0 {
+  background-color: #ebedf0;
+}
+.gh-level-1 {
+  background-color: #c6defa;
+}
+.gh-level-2 {
+  background-color: #9be9ff;
+}
+.gh-level-3 {
+  background-color: #58a6ff;
+}
+.gh-level-4 {
+  background-color: #1f6feb;
+}
+/* 底部 footer：左侧文字 + 右侧图例 */
+.gh-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+.gh-total-text {
+  font-size: 0.82rem;
+  color: var(--color-meta);
+}
+/* Less / More 图例 */
+.gh-legend {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.75rem;
+  color: var(--color-meta);
+}
+.gh-legend .gh-cell {
+  width: 10px;
+  height: 10px;
+  cursor: default;
+}
+.gh-legend .gh-cell:hover {
+  opacity: 1;
+  outline: none;
+}
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .github-heatmap {
+    padding: 14px;
+  }
+  .gh-weeks {
+    overflow-x: auto;
+  }
+}
 @-moz-keyframes whiteGlow {
   0%, 100% {
     box-shadow: 0 0 40px rgba(255,255,255,0.4), 0 0 70px rgba(255,255,255,0.3);
