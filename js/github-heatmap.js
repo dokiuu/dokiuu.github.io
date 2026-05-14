@@ -111,6 +111,10 @@
   }
 
   function init() {
+    // 只在首页（/#/ 或 /）渲染热力图
+    var isHomepage = location.pathname === '/' || location.pathname === '/index.html' || location.hash === '#/';
+    if (!isHomepage) return;
+
     var container = document.getElementById('github-heatmap');
     if (!container) return;
 
@@ -130,8 +134,13 @@
   }
 
   // Volantis pjax 切换页面后重新初始化
+  // 注意：pjax 回调执行时 DOM 可能还没完全更新，需要延迟到下一帧
   if (typeof volantis !== 'undefined' && volantis.pjax) {
-    volantis.pjax.push(init, 'github-heatmap');
+    volantis.pjax.push(function() {
+      window.requestAnimationFrame(function() {
+        window.requestAnimationFrame(init);
+      });
+    }, 'github-heatmap');
   }
 
 })();
