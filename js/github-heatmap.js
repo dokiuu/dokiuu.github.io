@@ -129,8 +129,9 @@
     init();
   }
 
-  // pjax 切换页面后重新初始化（Volantis 使用 pjax）
-  document.addEventListener('pjax:complete', init);
-  document.addEventListener('pjax:success', init);
+  // Volantis pjax 切换页面后重新初始化
+  if (typeof volantis !== 'undefined' && volantis.pjax) {
+    volantis.pjax.push(init, 'github-heatmap');
+  }
 
 })();
