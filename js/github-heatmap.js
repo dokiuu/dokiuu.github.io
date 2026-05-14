@@ -1,13 +1,6 @@
 (function() {
-  var container = document.getElementById('github-heatmap');
-  if (!container) return;
-
   var username = 'dokiuu';
-  var heatmapEl = document.getElementById('heatmap-container');
-  var statsEl = document.getElementById('heatmap-stats');
-
-  renderEmptyCalendar();
-  loadFromCommitsAPI();
+  var heatmapEl, statsEl;
 
   function loadFromCommitsAPI() {
     var allDates = [];
@@ -72,13 +65,11 @@
     var mNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
     // === 用 table 布局保证列对齐 ===
-    // 第1行：空 | 月份标签（每列一个td）
-    // 第2-8行：Mon/Wed/Fri | 每周格子
     var html = '<table class="gh-table"><tbody>';
 
-    // --- 第1行：月份标签 ---
+    // 第1行：月份标签
     html += '<tr class="gh-month-row">';
-    html += '<td class="gh-month-label-cell"></td>'; // 左侧和 Mon/Wed/Fri 对齐的空白单元格
+    html += '<td class="gh-month-label-cell"></td>';
     var lastMonthKey = '';
     weeks.forEach(function(wk) {
       var firstDay = wk.contributionDays[0];
@@ -92,13 +83,11 @@
     });
     html += '</tr>';
 
-    // --- 第2-8行：7天格子 ---
+    // 第2-8行：7天格子
     var dayNames = ['Mon', '', 'Wed', '', 'Fri', '', ''];
     for (var d = 0; d < 7; d++) {
       html += '<tr>';
-      // 左侧星期标签
       html += '<td class="gh-day-label-cell">' + dayNames[d] + '</td>';
-      // 每周的第 d 天格子
       weeks.forEach(function(wk) {
         var day = wk.contributionDays[d];
         var lvl = 0;
@@ -115,10 +104,33 @@
 
     heatmapEl.innerHTML = html;
 
-    // 统计栏
     var totalText = Object.keys(commits).length > 0
       ? (totalCount + ' contributions in the last year')
       : 'GitHub contributions';
     statsEl.innerHTML = '<div class="gh-footer"><div class="gh-footer-left"><span class="gh-source">数据来源 <a href="https://github.com/' + username + '" target="_blank">@' + username + '</a></span><span class="gh-total-text">' + totalText + '</span></div><div class="gh-legend"><span>Less</span><span class="gh-cell gh-level-1"></span><span class="gh-cell gh-level-2"></span><span class="gh-cell gh-level-3"></span><span class="gh-cell gh-level-4"></span><span>More</span></div></div>';
   }
+
+  function init() {
+    var container = document.getElementById('github-heatmap');
+    if (!container) return;
+
+    heatmapEl = document.getElementById('heatmap-container');
+    statsEl = document.getElementById('heatmap-stats');
+    if (!heatmapEl || !statsEl) return;
+
+    renderEmptyCalendar();
+    loadFromCommitsAPI();
+  }
+
+  // 首次加载
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // pjax 切换页面后重新初始化（Volantis 使用 pjax）
+  document.addEventListener('pjax:complete', init);
+  document.addEventListener('pjax:success', init);
+
 })();
