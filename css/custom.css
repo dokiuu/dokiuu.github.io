@@ -379,68 +379,50 @@ pre,
   margin-bottom: 16px;
   user-select: none;
 }
-/* 外层包裹：相对定位容器 */
-.gh-grid-wrapper {
-  position: relative;
+/* 外层包裹 */
+/* === Table 布局：月份和格子天然列对齐 === */
+.gh-table {
+  border-collapse: separate !important;
+  border-spacing: 3px !important; /* 格子之间的间距 */
+  width: auto !important;
+  table-layout: fixed !important;
 }
-/* 月份标签行 - 绝对定位容器 */
-.gh-months {
+/* 月份行 */
+.gh-month-label-cell {
+  width: 32px; /* 和 gh-day-label-cell 等宽 */
+}
+.gh-month-td {
   position: relative;
+  width: 10px;
   height: 18px;
-  margin-bottom: 6px;
 }
-/* 月份文字 - 绝对定位，left 由 JS 设置 */
 .gh-month-label {
-  position: absolute;
   font-size: 0.8rem;
   color: var(--color-meta);
   white-space: nowrap;
+  position: absolute;
+  left: 0;
+  top: -4px; /* 往上平移一点 */
 }
-/* 热力图主体 */
-.gh-body {
-  display: flex;
-  gap: 4px;
-}
-/* 左侧星期标签 Mon/Wed/Fri - 和右侧7行格子精确对齐 */
-.gh-day-labels {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* 让3个标签均匀分布在7行的空间中 */
-  padding: 0; /* 无额外间距 */
-  margin: 0;
-}
-.gh-day-labels span {
+/* 左侧星期标签单元格 */
+.gh-day-label-cell {
   font-size: 0.72rem;
   color: var(--color-meta);
   width: 28px;
-  height: 10px; /* 和格子等高 */
-  line-height: 10px;
-  text-align: right;
   padding-right: 4px;
-  box-sizing: border-box;
-  display: block;
-  flex-shrink: 0; /* 防止被压缩 */
-}
-/* 右侧热力图周列表 - 横向排列，每周是一列 */
-.gh-weeks {
-  display: flex;
-  gap: 3px;
-}
-/* 每周的7个格子垂直排列 */
-.gh-week {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-/* 热力图单元格 */
-.gh-cell {
-  width: 10px;
+  text-align: right;
+  vertical-align: middle;
   height: 10px;
+  line-height: 1;
+}
+/* 热力图格子单元格（table td） */
+.gh-cell.td {
+  width: 10px !important;
+  height: 10px !important;
   border-radius: 2px;
   cursor: pointer;
   transition: opacity 0.15s ease;
   box-sizing: border-box;
-  display: inline-block;
 }
 .gh-cell:hover {
   opacity: 0.6;
@@ -469,9 +451,25 @@ pre,
   align-items: center;
   margin-top: 12px;
 }
+.gh-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 .gh-total-text {
   font-size: 0.82rem;
   color: var(--color-meta);
+}
+.gh-source {
+  font-size: 0.82rem;
+  color: var(--color-meta);
+}
+.gh-source a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+.gh-source a:hover {
+  text-decoration: underline;
 }
 /* Less / More 图例 */
 .gh-legend {
