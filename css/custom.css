@@ -1,83 +1,52 @@
-/* 增强阴影效果 */
-:root {
-  --shadow-light: 0 4px 20px rgba(0,0,0,0.4);
-  --shadow-medium: 0 8px 30px rgba(0,0,0,0.5);
-  --shadow-heavy: 0 12px 40px rgba(0,0,0,0.6);
+/* ==================== 侧边栏深色模式切换按钮 ==================== */
+.sidebar-toggle-mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 auto 16px;
+  background: var(--color-card);
+  border: 1px solid var(--color-block);
+  transition: all 0.3s ease;
+  position: relative;
 }
-/* 卡片阴影增强 */
-.l_main .post-wrapper,
-.l_side .widget,
-.article,
-.post-block,
-.timenode,
-.category-list a,
-.tagcloud a {
-  box-shadow: var(--shadow-medium) !important;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+.sidebar-toggle-mode:hover {
+  background: var(--color-block);
+  transform: scale(1.08);
 }
-.l_main .post-wrapper:hover,
-.l_side .widget:hover,
-.article:hover,
-.post-block:hover {
-  box-shadow: var(--shadow-heavy) !important;
-  transform: translateY(-2px);
-}
-/* 侧边栏组件阴影 */
-.l_side .widget {
-  border-radius: 12px;
-  background: rgba(45,45,45,0.95);
-}
-/* 导航栏阴影增强 */
-#l_nav .navbar {
-  box-shadow: var(--shadow-medium) !important;
-}
-/* 文章列表项阴影 */
-.post-wrapper {
-  border-radius: 12px;
-  background: rgba(45,45,45,0.9) !important;
-}
-/* 时间线阴影 */
-.timenode {
-  background: rgba(45,45,45,0.9) !important;
-  border-left: 3px solid #3dd9b6;
-}
-/* 隐藏分类页面时间线的绿点（挡住时间） */
-div.timenode .meta:before,
-div.timenode .meta:after {
-  display: none !important;
-}
-/* 隐藏时间线竖线 */
-div.timenode:before,
-div.timenode:after {
-  display: none !important;
-}
-/* 按钮悬停效果 */
-.btn,
-button {
-  box-shadow: var(--shadow-light);
+.sidebar-toggle-mode .fa-moon,
+.sidebar-toggle-mode .fa-sun {
+  font-size: 20px;
+  color: var(--color-text);
+  position: absolute;
   transition: all 0.3s ease;
 }
-.btn:hover,
-button:hover {
-  box-shadow: var(--shadow-medium);
-  transform: translateY(-1px);
+.sidebar-toggle-mode .fa-sun {
+  display: none;
 }
-/* 封面阴影 */
-#l_cover {
-  box-shadow: var(--shadow-heavy);
+.sidebar-toggle-mode.dark .fa-sun {
+  display: inline;
 }
-/* 移动端底部导航阴影 */
-#l_cap + div {
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+.sidebar-toggle-mode.dark .fa-moon {
+  display: none;
 }
-/* 代码块阴影 */
-pre,
-.code-block {
-  box-shadow: var(--shadow-light);
+/* 侧边栏博主头像改为圆形（覆盖主题默认 rectangle 样式） */
+.widget.blogger .content > .avatar {
+  border-radius: 100% !important;
+  width: 130px !important;
+  height: 130px !important;
+  margin-top: 52px !important;
+  margin-bottom: 0.6em !important;
 }
-/* 搜索框阴影 */
-.search-box {
-  box-shadow: var(--shadow-light);
+.widget.blogger .content > .avatar.circle,
+.widget.blogger .content > .avatar img {
+  border-radius: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
 }
 /* 滚动条美化 */
 ::-webkit-scrollbar {
