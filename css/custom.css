@@ -1,39 +1,71 @@
-/* ==================== 侧边栏深色模式切换按钮 ==================== */
-.sidebar-toggle-mode {
+/* ==================== 左下角悬浮深色/浅色模式切换按钮 ==================== */
+.float-theme-toggle {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 9999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-card, #fff);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  cursor: pointer;
-  margin: 0 auto 16px;
-  background: var(--color-card);
-  border: 1px solid var(--color-block);
-  transition: all 0.3s ease;
-  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 10px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+/* 深色模式未激活时：显示月亮，隐藏太阳 */
+/* 深色模式激活时：显示太阳，隐藏月亮 */
+/* 移动端适配 */
 }
-.sidebar-toggle-mode:hover {
-  background: var(--color-block);
-  transform: scale(1.08);
+.float-theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.08);
 }
-.sidebar-toggle-mode .fa-moon,
-.sidebar-toggle-mode .fa-sun {
-  font-size: 20px;
-  color: var(--color-text);
+.float-theme-toggle:active {
+  transform: scale(0.95);
+}
+.float-theme-toggle svg {
+  width: 22px;
+  height: 22px;
   position: absolute;
-  transition: all 0.3s ease;
+  color: var(--color-text, #333);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.sidebar-toggle-mode .fa-sun {
-  display: none;
+.float-theme-toggle .icon-sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
 }
-.sidebar-toggle-mode.dark .fa-sun {
-  display: inline;
+.float-theme-toggle .icon-moon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
 }
-.sidebar-toggle-mode.dark .fa-moon {
-  display: none;
+.float-theme-toggle.dark .icon-sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
 }
-/* 侧边栏博主头像改为圆形（覆盖主题默认 rectangle 样式） */
+.float-theme-toggle.dark .icon-moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+@media (max-width: 768px) {
+  .float-theme-toggle {
+    bottom: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 9px;
+  }
+  .float-theme-toggle svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+/* ==================== 侧边栏博主头像改为圆形（覆盖主题默认 rectangle 样式） ==================== */
 .widget.blogger .content > .avatar {
   border-radius: 100% !important;
   width: 130px !important;
@@ -48,7 +80,7 @@
   height: 100% !important;
   object-fit: cover;
 }
-/* 滚动条美化 */
+/* ==================== 滚动条美化 ==================== */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
